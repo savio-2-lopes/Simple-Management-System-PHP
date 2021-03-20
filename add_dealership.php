@@ -36,15 +36,18 @@ if (isset($_POST['concessionaria'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><strong>Formulário</strong><small>Concessionária</small></div>
+                    <div class="card-header"><strong>Formulário</strong> <small>Concessionária</small></div>
                     <div class="card-body card-block">
                         <form method="post">
-                            <div class="form-group">
-                                <label for="department" class=" form-control-label">Nome da Concessionária</label>
-                                <input type="text" value="<?php echo $concessionaria ?>" name="concessionaria" placeholder="Entre com o nome da concessionária" class="form-control" required>
-                            </div>
 
-                            <button type="submit" class="btn btn-lg btn-success btn-block" style="border-radius:0.8rem">
+                            <section class="input-group mb-3 mt-5">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Nome</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $concessionaria ?>" name="concessionaria" placeholder="Nome da concessionária" required>
+                            </section>
+
+                            <button type="submit" class="btn btn-lg btn-success btn-block mt-4" style="border-radius:0.8rem">
                                 <span id="payment-button-amount">Cadastrar</span>
                             </button>
                         </form>

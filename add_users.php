@@ -44,28 +44,37 @@ if (isset($_POST['submit'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><strong>Formulário</strong><small>Usuário</small></div>
+                    <div class="card-header"><strong>Formulário</strong> <small>Usuário</small></div>
                     <div class="card-body card-block">
                         <form method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label class="form-control-label">Nome</label>
-                                <input type="text" value="<?php echo $name ?>" name="name" placeholder="Entre com o nome do usuário" class="form-control" required>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Senha</label>
-                                <input type="password" value="<?php echo $password ?>" name="password" placeholder="Entre com a senha do Usuário" class="form-control" required>
-                            </div>
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Nome</span>
+                                </div>
+                                <input type="text" value="<?php echo $name ?>" name="name" class="form-control" placeholder="Nome do usuário" aria-label="Username" aria-describedby="basic-addon1" required>
+                            </section>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Email</label>
-                                <input type="email" value="<?php echo $email ?>" name="email" placeholder="Entre com o email do usuário" class="form-control" required>
-                            </div>
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Senha</span>
+                                </div>
+                                <input type="password" value="<?php echo $password ?>" name="password" class="form-control" placeholder="Senha do usuário" aria-label="Username" aria-describedby="basic-addon1" required>
+                            </section>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Concessionária</label>
-                                <select name="concessionaria_id" required class="form-control">
-                                    <option value="">Selecione a concessionária</option>
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Senha</span>
+                                </div>
+                                <input type="email" value="<?php echo $email ?>" name="email" class="form-control" placeholder="Email do usuário" aria-label="Username" aria-describedby="basic-addon1" required>
+                            </section>
+
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Concessionária</label>
+                                </div>
+                                <select class="custom-select" name="concessionaria_id" id="inputGroupSelect01" required>
+                                    <option selected>Selecione a concessionária...</option>
 
                                     <?php
                                     $res = mysqli_query($con, "SELECT * FROM concessionaria ORDER BY concessionaria desc");
@@ -78,10 +87,10 @@ if (isset($_POST['submit'])) {
                                     }
                                     ?>
                                 </select>
-                            </div>
+                            </section>
 
                             <?php if ($_SESSION['ROLE'] == 1) { ?>
-                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" style="border-radius:0.8rem">
+                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block mt-4" style="border-radius:0.8rem">
                                     <span id="payment-button-amount">Cadastrar</span>
                                 </button>
                             <?php } ?>

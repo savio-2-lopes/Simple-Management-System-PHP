@@ -47,8 +47,11 @@ if (isset($_POST['submit'])) {
                     <div class="card-body card-block">
 
                         <form method="post" action="" enctype="multipart/form-data">
-                            <section class="form-group mt-4">
-                                <input type="text" value="<?php echo $nome ?>" name="nome" placeholder="Nome do veículo" class="form-control" required>
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Nome</span>
+                                </div>
+                                <input type="text" value="<?php echo $nome ?>" name="nome" class="form-control" placeholder="Nome do veículo" aria-label="Username" aria-describedby="basic-addon1" required>
                             </section>
 
                             <section class="input-group mb-3">
