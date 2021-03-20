@@ -5,7 +5,6 @@
             <div class="col-sm-6">
                 Copyright &copy; 4º ADS Fatec
             </div>
-
             <div class="col-sm-6 text-right">
                 Licenses <a href="https://opensource.org/licenses/MIT">MIT</a>
             </div>

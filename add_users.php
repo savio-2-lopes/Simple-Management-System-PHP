@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><small>Formulário</small><strong>Usuário</strong></div>
+                    <div class="card-header"><strong>Formulário</strong><small>Usuário</small></div>
                     <div class="card-body card-block">
                         <form method="post" enctype="multipart/form-data">
                             <div class="form-group">

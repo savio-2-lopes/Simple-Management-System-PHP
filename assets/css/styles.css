@@ -39,15 +39,6 @@
 .font-4xl {
   font-size: 3.75em;
 }
-.width-90 {
-  width: 90px;
-}
-.height-15 {
-  height: 15px;
-}
-.height-93 {
-  height: 93px;
-}
 .height-100 {
   height: 100px;
 }
@@ -1105,78 +1096,6 @@ header .form-inline .search-form.close {
   background: var(--white);
   border-radius: 5px 5px 0 0;
 }
-.card.weather-box .card-body {
-  padding-top: 0;
-}
-.card.weather-box .top {
-  background: #eceff1;
-  margin-left: -20px;
-  margin-right: -20px;
-  padding: 20px;
-  padding-top: 22px;
-  overflow: hidden;
-}
-.card.weather-box .top .wi {
-  float: left;
-  width: 100px;
-  text-align: left;
-  padding-bottom: 10px;
-}
-.card.weather-box .top .wi:before {
-  font-size: 60px;
-}
-.card.weather-box .top .updates {
-  font-size: 14px;
-  text-align: right;
-}
-.card.weather-box .top .currently {
-  font-size: 22px;
-  text-align: right;
-}
-.card.weather-box .middle {
-  clear: both;
-  position: relative;
-  height: 80px;
-  color: #333648;
-}
-.card.weather-box .middle .city {
-  padding-top: 15px;
-  width: 100%;
-  font-weight: 700;
-  font-size: 16px;
-}
-.card.weather-box .middle .city span {
-  font-size: 14px;
-  display: block;
-  font-weight: 400;
-}
-.card.weather-box .middle .temp {
-  position: absolute;
-  font-size: 34px;
-  top: 10px;
-  right: 0;
-}
-.card.weather-box .middle .temp span {
-  font-size: 16px;
-}
-.card.weather-box .nextdays {
-  clear: both;
-  padding-top: 22px;
-  text-align: center;
-  margin-left: -20px;
-  margin-right: -20px;
-  border-top: 1px solid #ededed;
-  background: var(--white);
-  font-family: open sans, sans-serif;
-}
-.card.weather-box .nextdays .days {
-  display: inline-block;
-  width: 20%;
-  font-size: 14px;
-}
-.card.weather-box .nextdays .days span {
-  display: block;
-}
 .card .card-footer,
 .card .card-top {
   background: #fafafa;
@@ -1798,9 +1717,6 @@ header .form-inline .search-form.close {
 .morris-hover-point {
   color: rgba(255, 255, 255, 0.8) !important;
 }
-#morris-bar-chart {
-  height: 285px;
-}
 .map,
 .vmap {
   width: 100%;
@@ -1825,133 +1741,6 @@ header .form-inline .search-form.close {
 }
 .dib {
   display: inline-block;
-}
-.stat-widget-one .stat-icon {
-  vertical-align: top;
-}
-.stat-widget-one .stat-icon i {
-  font-size: 30px;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 100px;
-  padding: 15px;
-  font-weight: 900;
-  display: inline-block;
-}
-.stat-widget-one .stat-content {
-  margin-left: 30px;
-  margin-top: 7px;
-}
-.stat-widget-one .stat-text {
-  font-size: 14px;
-  color: var(--gray);
-}
-.stat-widget-one .stat-digit {
-  font-size: 24px;
-  color: #373757;
-}
-.stat-widget-two {
-  text-align: center;
-}
-.stat-widget-two .stat-digit {
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: #373757;
-}
-.stat-widget-two .stat-digit i {
-  font-size: 18px;
-  margin-right: 5px;
-}
-.stat-widget-two .stat-text {
-  font-size: 16px;
-  margin-bottom: 5px;
-  color: var(--gray);
-}
-.stat-widget-two .progress {
-  height: 8px;
-  margin-bottom: 0;
-  margin-top: 20px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.stat-widget-two .progress-bar {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.stat-widget-three .stat-icon {
-  display: inline-block;
-  padding: 33px;
-  position: absolute;
-  line-height: 21px;
-}
-.stat-widget-three .stat-icon i {
-  font-size: 30px;
-  color: var(--white);
-}
-.stat-widget-three .stat-content {
-  text-align: center;
-  padding: 15px;
-  margin-left: 90px;
-}
-.stat-widget-three .stat-digit {
-  font-size: 30px;
-}
-.stat-widget-three .stat-text {
-  padding-top: 4px;
-}
-.home-widget-three .stat-icon {
-  line-height: 19px;
-  padding: 27px;
-}
-.home-widget-three .stat-digit {
-  font-size: 24px;
-  font-weight: 300;
-  color: #373757;
-}
-.home-widget-three .stat-content {
-  text-align: center;
-  margin-left: 60px;
-  padding: 13px;
-}
-.stat-widget-four {
-  position: relative;
-}
-.stat-widget-four .stat-icon {
-  display: inline-block;
-  position: absolute;
-  top: 5px;
-}
-.stat-widget-four i {
-  display: block;
-  font-size: 36px;
-}
-.stat-widget-four .stat-content {
-  margin-left: 40px;
-  text-align: center;
-}
-.stat-widget-four .stat-heading {
-  font-size: 20px;
-}
-.stat-widget-five {
-  min-height: 60px;
-}
-.stat-widget-five .stat-icon {
-  font-size: 50px;
-  line-height: 50px;
-  position: absolute;
-  left: 30px;
-  top: 20px;
-}
-.stat-widget-five .stat-content {
-  margin-left: 100px;
-}
-.stat-widget-five .stat-text {
-  color: #455a64;
-  font-size: 20px;
-}
-.stat-widget-five .stat-heading {
-  color: #99abb4;
-  font-size: 14px;
 }
 .horizontal:before {
   background: var(--white);
@@ -1981,26 +1770,6 @@ header .form-inline .search-form.close {
   right: 0 !important;
   top: 93% !important;
 }
-.dataTables_paginate .pagination {
-  border-radius: 0;
-}
-.dataTables_paginate .pagination li {
-  border-radius: 0 !important;
-}
-.dataTables_paginate .pagination li a {
-  border-radius: 0 !important;
-  color: #292b35;
-}
-.dataTables_paginate .pagination li.active a {
-  background: #292b35;
-  border-color: #292b35;
-  color: var(--white);
-}
-.dataTables_paginate .pagination li:hover a {
-  background: #292b35;
-  border-color: #292b35;
-  color: var(--white);
-}
 footer.site-footer {
   padding: 0 1.875em;
 }
@@ -2020,16 +1789,6 @@ footer.site-footer .footer-inner a {
   }
 }
 @media (max-width: 1368px) {
-  .twt-category {
-    margin-bottom: 0;
-  }
-  .twt-feed {
-    max-height: 155px;
-  }
-  .twt-feed img {
-    height: 75px;
-    width: 75px;
-  }
   .stat-widget-one .stat-content {
     margin-left: 15px;
   }
@@ -2038,9 +1797,6 @@ footer.site-footer .footer-inner a {
   }
   .badges button {
     margin: 2px 0;
-  }
-  #g2 {
-    padding-top: 33px;
   }
   .timeline li .time {
     padding-bottom: 10px;
@@ -2056,12 +1812,6 @@ footer.site-footer .footer-inner a {
   }
   .widget .card-footer.p-3.bg-white.text-center {
     padding: 0.9em !important;
-  }
-  .weather h3.fw-r.text-white {
-    font-size: 1.125em;
-  }
-  .weather span {
-    font-size: 12px;
   }
 }
 @media (max-width: 1024px) {
@@ -2230,7 +1980,6 @@ footer.site-footer .footer-inner a {
   .navbar .main-menu {
     padding: 0;
   }
-  #language-select,
   .user-area .dropdown-toggle,
   header .form-inline {
     height: 48px;
@@ -2238,17 +1987,11 @@ footer.site-footer .footer-inner a {
   .header-left .dropdown .dropdown-menu {
     top: 47px !important;
   }
-  #language-select .dropdown-menu {
-    top: 49px !important;
-  }
   .user-area .user-menu {
     top: 51px !important;
   }
   .content {
     padding: 1.25em;
-  }
-  .flotRealtime2 {
-    height: 330px;
   }
   .card {
     margin-bottom: 1.25em;
@@ -2272,18 +2015,6 @@ footer.site-footer .footer-inner a {
     padding-left: 1em !important;
     padding-right: 1em !important;
   }
-  #g2 {
-    height: auto !important;
-    padding-top: 7px;
-  }
-  #flotBar2 {
-    height: 150px;
-  }
-  #g1 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-  }
   .card-footer.bg-white [class*="float"] {
     display: block;
     float: none !important;
@@ -2295,9 +2026,6 @@ footer.site-footer .footer-inner a {
   .card-footer.bg-white [class*="float"].fa {
     display: inline-block;
     float: left !important;
-  }
-  #traffic-chart {
-    height: 232px !important;
   }
   i.p-4.font-3xl.width-90.text-center.mr-3.float-left.text-light {
     font-size: 1.8125em;

@@ -11,10 +11,8 @@ if (isset($_GET['id'])) {
     if ($_SESSION['ROLE'] == 2 && $_SESSION['USER_ID'] != $id) {
         die('Acesso Negado');
     }
-
     $res = mysqli_query($con, "SELECT * FROM veiculos WHERE id='$id'");
     $row = mysqli_fetch_assoc($res);
-
     $preco = $row['preco'];
     $nome = $row['nome'];
     $concessionaria_id = $row['concessionaria_id'];
@@ -46,7 +44,7 @@ if (isset($_POST['submit'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><small>Formulário</small><strong>Veiculos</strong></div>
+                    <div class="card-header"><strong>Formulário</strong><small>Veiculos</small></div>
                     <div class="card-body card-block">
 
                         <form method="post" action="" enctype="multipart/form-data">

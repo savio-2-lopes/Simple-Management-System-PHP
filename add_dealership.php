@@ -36,7 +36,7 @@ if (isset($_POST['concessionaria'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><small>Formulário</small><strong>Concessionária</strong></div>
+                    <div class="card-header"><strong>Formulário</strong><small>Concessionária</small></div>
                     <div class="card-body card-block">
                         <form method="post">
                             <div class="form-group">
