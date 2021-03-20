@@ -38,7 +38,7 @@ if (!isset($_SESSION['ROLE'])) {
                         <a href="index.php">Central das Concessionária</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="vehicle.php">Central dos Veículos</a>
+                        <a href="vehicle.php">Catalógo de Veículos</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="user.php">Central dos Usuários</a>

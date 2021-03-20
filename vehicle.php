@@ -20,9 +20,9 @@ $res = mysqli_query($con, "SELECT * FROM veiculos WHERE role=2 order by id desc"
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="box-title">Central de Veiculos </h4>
+                        <h4 class="box-title">Catálogo de Veiculos </h4>
                         <h4 class="box-title-link">
-                            <a href="add_car.php"><i class="fa fa-plus"></i> Registrar Veiculos</a>
+                            <a href="add_car.php"><i class="fa fa-plus"></i> Cadastrar novos veiculos</a>
                         </h4>
                     </div>
 
