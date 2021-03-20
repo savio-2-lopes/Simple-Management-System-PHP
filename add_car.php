@@ -22,15 +22,14 @@ if (isset($_POST['submit'])) {
     $preco = mysqli_real_escape_string($con, $_POST['preco']);
     $nome = mysqli_real_escape_string($con, $_POST['nome']);
     $concessionaria_id = mysqli_real_escape_string($con, $_POST['concessionaria_id']);
-
-    $avatar = $_FILES["avatar"]["name"];
-    $tempname = $_FILES["avatar"]["tmp_name"];
-    $folder = "image/" . $avatar;
+    $avatar = $_FILES['avatar']['name'];
 
     if ($id > 0) {
-        $sql = "UPDATE veiculos SET nome='$nome',preco='$preco',avatar='$avatar',concessionaria_id='$concessionaria_id' WHERE id='$id'";
+        move_uploaded_file($_FILES['avatar']['tmp_name'], '$avatar');
+
+        $sql = "UPDATE veiculos SET nome='$nome',preco='$preco',concessionaria_id='$concessionaria_id',avatar='$avatar' WHERE id='$id'";
     } else {
-        $sql = "INSERT INTO veiculos(nome,preco,avatar,concessionaria_id,role) values('$nome','$preco','$avatar','$concessionaria_id','2')";
+        $sql = "INSERT INTO veiculos(nome,preco,concessionaria_id,avatar,role) values('$nome','$preco','$concessionaria_id,'$avatar','2')";
     }
 
     mysqli_query($con, $sql);
@@ -44,29 +43,40 @@ if (isset($_POST['submit'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><strong>Formulário</strong><small>Veiculos</small></div>
+                    <div class="card-header"><strong>Formulário</strong> <small>Veiculos</small></div>
                     <div class="card-body card-block">
 
                         <form method="post" action="" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label class="form-control-label">Nome</label>
-                                <input type="text" value="<?php echo $nome ?>" name="nome" placeholder="Entre com o nome do imóvel" class="form-control" required>
-                            </div>
+                            <section class="form-group mt-4">
+                                <input type="text" value="<?php echo $nome ?>" name="nome" placeholder="Nome do veículo" class="form-control" required>
+                            </section>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Preço</label>
-                                <input type="currency" value="<?php echo $preco ?>" name="preco" placeholder="Entre com o preço do imóvel" class="form-control" required>
-                            </div>
+                            <section class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input type="currency" value="<?php echo $preco ?>" name="preco" placeholder="Preço do veículo" class="form-control" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </section>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Avatar</label>
-                                <input type="file" value="<?php echo $avatar ?>" name="avatar" placeholder="Entre com o avatar do imóvel" class="form-control" required>
-                            </div>
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Avatar</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="<?php echo $avatar ?>" name="avatar" placeholder="Avatar do veículo" required>
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </section>
 
-                            <div class="form-group">
-                                <label class="form-control-label">Concessionária</label>
-                                <select name="concessionaria_id" required class="form-control">
-                                    <option value="">Selecione a concessionária</option>
+                            <section class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Concessionária</label>
+                                </div>
+                                <select class="custom-select" name="concessionaria_id" id="inputGroupSelect01" required>
+                                    <option selected>Selecione a concessionária...</option>
 
                                     <?php
                                     $res = mysqli_query($con, "SELECT * FROM concessionaria ORDER BY concessionaria desc");
@@ -79,10 +89,10 @@ if (isset($_POST['submit'])) {
                                     }
                                     ?>
                                 </select>
-                            </div>
+                            </section>
 
                             <?php if ($_SESSION['ROLE'] == 1) { ?>
-                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block" style="border-radius:0.8rem">
+                                <button type="submit" name="submit" class="btn btn-lg btn-success btn-block mt-4" style="border-radius:0.8rem">
                                     <span id="payment-button-amount">Cadastrar</span>
                                 </button>
                             <?php } ?>
