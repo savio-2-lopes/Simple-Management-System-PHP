@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="System" title="System" src="./public/gif.gif" width="600px" />
+    <img alt="System" title="System" src="public/gif.gif" width="600px" />
 </h3>
 
 <p align="center"> :computer: <strong>Em progresso ...</strong> 🚧</p>
