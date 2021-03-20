@@ -59,11 +59,9 @@ $ git clone https://github.com/savio-2-lopes/simple_management-system_php.git
 # Abra seu navegador em
 $ http://localhost/simple_management-system_php
 
-# Realize login com email e
-$ test@gmail.com
-
-# E senha
-$ 123456
+# Realize login com os seguintes dados
+$ login - test@gmail.com
+$ senha - 123456
 
 ```
 
