@@ -3,6 +3,7 @@ require('top.php');
 $preco = '';
 $nome = '';
 $status = '';
+$avatar = '';
 $concessionaria_id = '';
 $id = '';
 
@@ -11,25 +12,27 @@ if (isset($_GET['id'])) {
     if ($_SESSION['ROLE'] == 2 && $_SESSION['USER_ID'] != $id) {
         die('Acesso Negado');
     }
+
     $res = mysqli_query($con, "SELECT * FROM veiculos WHERE id='$id'");
     $row = mysqli_fetch_assoc($res);
+
     $preco = $row['preco'];
     $nome = $row['nome'];
+    $avatar = $row['avatar'];
     $concessionaria_id = $row['concessionaria_id'];
 }
 
 if (isset($_POST['submit'])) {
-    $preco = mysqli_real_escape_string($con, $_POST['preco']);
     $nome = mysqli_real_escape_string($con, $_POST['nome']);
+    $preco = mysqli_real_escape_string($con, $_POST['preco']);
+    $avatar = mysqli_real_escape_string($con, $_FILES['avatar']['name']);
     $concessionaria_id = mysqli_real_escape_string($con, $_POST['concessionaria_id']);
-    $avatar = $_FILES['avatar']['name'];
 
     if ($id > 0) {
         move_uploaded_file($_FILES['avatar']['tmp_name'], '$avatar');
-
-        $sql = "UPDATE veiculos SET nome='$nome',preco='$preco',concessionaria_id='$concessionaria_id',avatar='$avatar' WHERE id='$id'";
+        $sql = "UPDATE veiculos SET nome='$nome',preco='$preco',avatar='$avatar',concessionaria_id='$concessionaria_id' WHERE id='$id'";
     } else {
-        $sql = "INSERT INTO veiculos(nome,preco,concessionaria_id,avatar,role) values('$nome','$preco','$concessionaria_id,'$avatar','2')";
+        $sql = "INSERT INTO veiculos(nome,preco,avatar,concessionaria_id,role) values('$nome','$preco','$avatar','$concessionaria_id','2')";
     }
 
     mysqli_query($con, $sql);
@@ -43,10 +46,10 @@ if (isset($_POST['submit'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><strong>Formulário</strong> <small>Veiculos</small></div>
+                    <div class="card-header"><strong>Formulário</strong> <small>Usuário</small></div>
                     <div class="card-body card-block">
+                        <form method="post" enctype="multipart/form-data">
 
-                        <form method="post" action="" enctype="multipart/form-data">
                             <section class="input-group mb-3 mt-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Nome</span>
@@ -54,22 +57,19 @@ if (isset($_POST['submit'])) {
                                 <input type="text" value="<?php echo $nome ?>" name="nome" class="form-control" placeholder="Nome do veículo" aria-label="Username" aria-describedby="basic-addon1" required>
                             </section>
 
-                            <section class="input-group mb-3">
+                            <section class="input-group mb-3 mt-4">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">$</span>
+                                    <span class="input-group-text" id="basic-addon1">Preço</span>
                                 </div>
-                                <input type="currency" value="<?php echo $preco ?>" name="preco" placeholder="Preço do veículo" class="form-control" required>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">.00</span>
-                                </div>
+                                <input type="currency" value="<?php echo $preco ?>" name="preco" class="form-control" placeholder="Preço do veículo" aria-label="Username" aria-describedby="basic-addon1" required>
                             </section>
 
                             <section class="input-group mb-3 mt-4">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Avatar</span>
+                                    <span class="input-group-text">Avatar</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="<?php echo $avatar ?>" name="avatar" placeholder="Avatar do veículo" required>
+                                    <input type="file" value="<?php echo $avatar ?>" name="avatar" class="custom-file-input" id="inputGroupFile01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
                             </section>

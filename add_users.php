@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
 
                             <section class="input-group mb-3 mt-4">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Senha</span>
+                                    <span class="input-group-text" id="basic-addon1">Email</span>
                                 </div>
                                 <input type="email" value="<?php echo $email ?>" name="email" class="form-control" placeholder="Email do usuário" aria-label="Username" aria-describedby="basic-addon1" required>
                             </section>
