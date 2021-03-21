@@ -59,9 +59,12 @@ if (isset($_POST['submit'])) {
 
                             <section class="input-group mb-3 mt-4">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Preço</span>
+                                    <span class="input-group-text" id="basic-addon1">$</span>
                                 </div>
                                 <input type="currency" value="<?php echo $preco ?>" name="preco" class="form-control" placeholder="Preço do veículo" aria-label="Username" aria-describedby="basic-addon1" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
                             </section>
 
                             <section class="input-group mb-3 mt-4">
