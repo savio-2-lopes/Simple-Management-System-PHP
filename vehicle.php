@@ -44,16 +44,11 @@ $res = mysqli_query($con, "SELECT * FROM veiculos WHERE role=2 order by id desc"
                                     <?php
                                     $i = 1;
                                     while ($row = mysqli_fetch_assoc($res)) { ?>
+
                                         <tr>
                                             <td><?php echo $i ?></td>
                                             <td><?php echo $row['id'] ?></td>
-                                            <td class="avatar">
-                                                <div class="round-img">
-                                                    <a href="#">
-                                                        <img class="rounded-circle" <?php echo $row['avatar'] ?> alt="Avatar">
-                                                    </a>
-                                                </div>
-                                            </td>
+                                            <td><img src="<?php echo $row['avatar'] ?>"> </td>
                                             <td><?php echo $row['nome'] ?></td>
                                             <td><?php echo $row['preco'] ?></td>
                                             <td class="row">

@@ -16,9 +16,11 @@ if (isset($_GET['id'])) {
     $res = mysqli_query($con, "SELECT * FROM veiculos WHERE id='$id'");
     $row = mysqli_fetch_assoc($res);
 
+    $_UP['pasta'] = './upload/';
+
+    $avatar = $row['avatar'];
     $preco = $row['preco'];
     $nome = $row['nome'];
-    $avatar = $row['avatar'];
     $concessionaria_id = $row['concessionaria_id'];
 }
 
@@ -29,9 +31,12 @@ if (isset($_POST['submit'])) {
     $concessionaria_id = mysqli_real_escape_string($con, $_POST['concessionaria_id']);
 
     if ($id > 0) {
-        move_uploaded_file($_FILES['avatar']['tmp_name'], '$avatar');
+
+        move_uploaded_file($_FILES['avatar']['tmp_name'], $_UP['pasta'] . $avatar);
+
         $sql = "UPDATE veiculos SET nome='$nome',preco='$preco',avatar='$avatar',concessionaria_id='$concessionaria_id' WHERE id='$id'";
     } else {
+        move_uploaded_file($_FILES['avatar']['tmp_name'], $_UP['pasta'] . $avatar);
         $sql = "INSERT INTO veiculos(nome,preco,avatar,concessionaria_id,role) values('$nome','$preco','$avatar','$concessionaria_id','2')";
     }
 
@@ -72,7 +77,7 @@ if (isset($_POST['submit'])) {
                                     <span class="input-group-text">Avatar</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" value="<?php echo $avatar ?>" name="avatar" class="custom-file-input" id="inputGroupFile01">
+                                    <input type="file" value="<?php echo $avatar ?>" name="avatar" accept=".png,.gif,.jpg,.webp" class="custom-file-input" id="inputGroupFile01">
                                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                                 </div>
                             </section>
