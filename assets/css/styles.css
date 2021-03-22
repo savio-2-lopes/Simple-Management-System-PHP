@@ -21,71 +21,11 @@
     font-size: 87.5%;
   }
 }
-.fw-r {
-  font-weight: 400;
-}
-.color-gray {
-  color: var(--gray);
-}
-.text-up {
-  text-transform: uppercase;
-}
-.br-0 {
-  border: none !important;
-}
-.font-3xl {
-  font-size: 2.8125em;
-}
-.font-4xl {
-  font-size: 3.75em;
-}
-.height-100 {
-  height: 100px;
-}
 .inline-block {
   display: inline-block;
 }
-.mb-15 {
-  margin-bottom: 15px;
-}
-.fade-5 {
-  opacity: 0.5;
-}
-.icon-lg {
-  font-size: 4.68em;
-}
-.fw-r {
-  font-weight: 400;
-}
-.text-up {
-  text-transform: uppercase;
-}
-.br-0 {
-  border: none !important;
-}
-.font-3xl {
-  font-size: 2.8125em;
-}
-.font-4xl {
-  font-size: 3.75em;
-}
-.width-90 {
-  width: 90px;
-}
-.height-15 {
-  height: 15px;
-}
-.height-93 {
-  height: 93px;
-}
-.height-100 {
-  height: 100px;
-}
 .inline-block {
   display: inline-block;
-}
-.mb-15 {
-  margin-bottom: 15px;
 }
 .transition {
   -webkit-transition: all 0.3s ease;
@@ -1235,40 +1175,6 @@ header .form-inline .search-form.close {
 .flotLine1 {
   height: 75px;
 }
-.gauge.g1 svg {
-  fill: #ffa726 !important;
-}
-.table-stats table {
-  font-family: open sans;
-}
-.table-stats table td,
-.table-stats table th {
-  border: none;
-  border-bottom: 1px solid #e8e9ef;
-  color: var(--gray);
-  font-size: 12px;
-  font-weight: 400;
-  padding: 0.75em 1.25em;
-  text-transform: uppercase;
-}
-.table-stats table td img,
-.table-stats table th img {
-  margin-right: 10px;
-  max-width: 45px;
-}
-.table-stats table td .name,
-.table-stats table th .name {
-  color: #343a40;
-  font-size: 14px;
-  text-transform: none;
-}
-.table-stats table td {
-  color: #343a40;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: none;
-  vertical-align: middle;
-}
 .timeline li {
   font-family: open sans;
   list-style: none;
@@ -1348,26 +1254,6 @@ header .form-inline .search-form.close {
 }
 .nav-tabs .dropdown .dropdown-menu {
   top: 100% !important;
-}
-.custom-tab .nav-tabs > .active > a:focus,
-.custom-tab .nav-tabs > a.active,
-.custom-tab .nav-tabs > li.active > a:hover {
-  border-color: transparent transparent;
-  color: #ff2e44;
-  position: relative;
-}
-.custom-tab .nav-tabs > a.active:after,
-.custom-tab .nav-tabs > li.active > a:focus:after,
-.custom-tab .nav-tabs > li.active > a:hover:after {
-  background: #ff2e44;
-  bottom: -1px;
-  content: "";
-  height: 2px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  width: 100%;
-  z-index: 999;
 }
 .card .card-header .card-actions {
   float: right;

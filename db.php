@@ -1,3 +1,9 @@
 <?php
 session_start();
-$con = mysqli_connect('localhost', 'root', '', 'loja1');
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName = "loja1";
+
+$con = mysqli_connect($hostname, $username, $password, $databaseName);
