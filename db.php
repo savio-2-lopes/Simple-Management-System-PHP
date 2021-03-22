@@ -6,4 +6,8 @@ $username = "root";
 $password = "";
 $databaseName = "loja1";
 
-$con = mysqli_connect($hostname, $username, $password, $databaseName);
+$con = new mysqli($hostname, $username, $password, $databaseName);
+
+if ($con->connect_error) {
+    die("Falha na conexão: " . $con->connect_error);
+}
