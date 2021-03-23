@@ -1,5 +1,6 @@
 <?php
 require('top.php');
+
 $preco = '';
 $nome = '';
 $status = '';
@@ -9,6 +10,7 @@ $id = '';
 
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($con, $_GET['id']);
+
     if ($_SESSION['ROLE'] == 2 && $_SESSION['USER_ID'] != $id) {
         die('Acesso Negado');
     }
@@ -16,7 +18,7 @@ if (isset($_GET['id'])) {
     $res = mysqli_query($con, "SELECT * FROM veiculos WHERE id='$id'");
     $row = mysqli_fetch_assoc($res);
 
-    $_UP['pasta'] = './upload/';
+    $_UP['pasta'] = 'upload/';
 
     $avatar = $row['avatar'];
     $preco = $row['preco'];
@@ -31,9 +33,7 @@ if (isset($_POST['submit'])) {
     $concessionaria_id = mysqli_real_escape_string($con, $_POST['concessionaria_id']);
 
     if ($id > 0) {
-
         move_uploaded_file($_FILES['avatar']['tmp_name'], $_UP['pasta'] . $avatar);
-
         $sql = "UPDATE veiculos SET nome='$nome',preco='$preco',avatar='$avatar',concessionaria_id='$concessionaria_id' WHERE id='$id'";
     } else {
         move_uploaded_file($_FILES['avatar']['tmp_name'], $_UP['pasta'] . $avatar);
@@ -46,13 +46,17 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<div class="content pb-0">
-    <div class="animated fadeIn">
+<main class="content pb-0" role="main">
+    <aside class="animated fadeIn">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><strong>Formulário</strong> <small>Usuário</small></div>
-                    <div class="card-body card-block">
+
+                    <section class="card-header">
+                        <strong>Formulário</strong> <small>Usuário</small>
+                    </section>
+
+                    <article class="card-body card-block">
                         <form method="post" enctype="multipart/form-data">
 
                             <section class="input-group mb-3 mt-4">
@@ -108,12 +112,12 @@ if (isset($_POST['submit'])) {
                                 </button>
                             <?php } ?>
                         </form>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </aside>
+</main>
 
 <?php
 require('footer.php');

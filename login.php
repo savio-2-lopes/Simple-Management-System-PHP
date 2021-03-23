@@ -49,17 +49,18 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <div class="login-content">
                 <div class="login-form mt-150" style="border-radius:1rem">
                     <form method="POST">
-                        <div class="form-group">
+
+                        <section class="form-group">
                             <span class="sr-only">Email</span>
                             <label> Email </label>
                             <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Email" required>
-                        </div>
+                        </section>
 
-                        <div class="form-group">
+                        <section class="form-group">
                             <span class="sr-only">Senha</span>
                             <label>Senha</label>
                             <input type="password" autocomplete="off" name="password" class="form-control" placeholder="Senha" required>
-                        </div>
+                        </section>
 
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" style="border-radius:0.8rem">Entrar</button>
                         <div class="result_msg"><?php echo $msg; ?></div>

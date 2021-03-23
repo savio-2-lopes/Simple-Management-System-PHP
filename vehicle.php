@@ -49,12 +49,12 @@ $res = mysqli_query($con, "SELECT * FROM veiculos WHERE role=2 order by id desc"
                                             <td><?php echo $i ?></td>
                                             <td><?php echo $row['id'] ?></td>
 
-                                            <td>
-                                                <img class="rounded-circle" src="<?php echo $row['avatar'] ?>" alt="Avatar">
+                                            <td class="avatar">
+                                                <img class="rounded-circle" style="width:6rem; height:5rem" src="<?php echo $row['avatar'] ?>" alt="Avatar">
                                             </td>
 
                                             <td><?php echo $row['nome'] ?></td>
-                                            <td><?php echo $row['preco'] ?></td>
+                                            <td>R$<?php echo $row['preco'] ?></td>
                                             <td class="row">
                                                 <div class="col-lg-6">
                                                     <button class="btn btn-success btn-block">

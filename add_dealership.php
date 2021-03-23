@@ -1,5 +1,6 @@
 <?php
 require('top.php');
+
 if ($_SESSION['ROLE'] != 1) {
     header('location:add_user.php?id=' . $_SESSION['USER_ID']);
     die();
@@ -31,13 +32,17 @@ if (isset($_POST['concessionaria'])) {
 }
 ?>
 
-<div class="content pb-0">
-    <div class="animated fadeIn">
+<main class="content pb-0" role="main">
+    <aside class="animated fadeIn">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><strong>Formulário</strong> <small>Concessionária</small></div>
-                    <div class="card-body card-block">
+
+                    <section class="card-header">
+                        <strong>Formulário</strong> <small>Concessionária</small>
+                    </section>
+
+                    <article class="card-body card-block">
                         <form method="post">
 
                             <section class="input-group mb-3 mt-5">
@@ -51,12 +56,12 @@ if (isset($_POST['concessionaria'])) {
                                 <span id="payment-button-amount">Cadastrar</span>
                             </button>
                         </form>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </aside>
+</main>
 
 <?php
 require('footer.php');

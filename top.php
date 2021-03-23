@@ -1,5 +1,6 @@
 <?php
 require('db.php');
+
 if (!isset($_SESSION['ROLE'])) {
     header('location:login.php');
     die();

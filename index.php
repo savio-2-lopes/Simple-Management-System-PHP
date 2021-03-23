@@ -13,18 +13,24 @@ if (isset($_GET['type']) && $_GET['type'] == 'delete' && isset($_GET['id'])) {
 $res = mysqli_query($con, "SELECT * FROM concessionaria order by id desc");
 ?>
 
-<div class="content pb-0">
-    <div class="dealerships">
+<main class="content pb-0" role="main">
+    <aside class="dealerships">
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="box-title">Central das Concessionária</h4>
-                        <h4 class="box-title-link"><a href="add_dealership.php"><i class="fa fa-plus"></i> Registrar Concessionária</a></h4>
-                    </div>
 
-                    <div class="card-body--">
-                        <div class="table-stats dealership-table ov-h">
+                    <section class="card-body">
+                        <h4 class="box-title">Central das Concessionária</h4>
+                        <h4 class="box-title-link">
+                            <a href="add_dealership.php"><i class="fa fa-plus"></i>
+                                Registrar Concessionária
+                            </a>
+                        </h4>
+                    </section>
+
+                    <article class="card-body--">
+                        <section class="table-stats dealership-table ov-h">
+
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -45,29 +51,36 @@ $res = mysqli_query($con, "SELECT * FROM concessionaria order by id desc");
                                             <td><?php echo $row['id'] ?></td>
                                             <td><?php echo $row['concessionaria'] ?></td>
                                             <td class="row">
-                                                <div class="col-lg-6">
+
+                                                <section class="col-lg-6">
                                                     <button class="btn btn-success btn-block">
-                                                        <a href="add_dealership.php?id=<?php echo $row['id'] ?>"><span style="color:white; font-size:15px">Editar</span></a>
+                                                        <a href="add_dealership.php?id=<?php echo $row['id'] ?>">
+                                                            <span style="color:white; font-size:15px">Editar</span>
+                                                        </a>
                                                     </button>
-                                                </div>
-                                                <div class="col-lg-6">
+                                                </section>
+
+                                                <section class="col-lg-6">
                                                     <button class="btn btn-danger btn-block">
-                                                        <a href="index.php?id=<?php echo $row['id'] ?>&type=delete"><span style="color:white; font-size:15px">Deletar</span></a>
+                                                        <a href="index.php?id=<?php echo $row['id'] ?>&type=delete">
+                                                            <span style="color:white; font-size:15px">Deletar</span>
+                                                        </a>
                                                     </button>
-                                                </div>
+                                                </section>
+
                                             </td>
                                         </tr>
                                     <?php $i++;
                                     } ?>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
+                        </section>
+                    </article>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </aside>
+</main>
 
 <?php
 require('footer.php');
