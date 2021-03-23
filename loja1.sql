@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.0.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 20-Mar-2021 às 21:14
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 8.0.2
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +32,7 @@ CREATE TABLE `concessionaria` (
 INSERT INTO `concessionaria` (`id`, `concessionaria`) VALUES
 (1, 'Green Car H1'),
 (2, 'Green Car H2'),
-(3, 'Green Car H3');
+(10, 'None');
 
 -- --------------------------------------------------------
 
@@ -62,7 +55,9 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `email`, `password`, `name`, `concessionaria_id`, `role`) VALUES
 (1, 'savioaugulopes@gmail.com', '123456', 'Savio', 1, 1),
-(2, 'savioaugulopes@gmail.com', '123456', 'Savio', 3, 2);
+(3, 'test@gmail.com', '123456', 'Savio', 1, 1),
+(4, 'pessoal@gmail.com', '1234566', 'pessoa', 3, 2),
+(11, 'sa@gmail.com', '121212', 'sdsd', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -86,7 +81,11 @@ CREATE TABLE `veiculos` (
 --
 
 INSERT INTO `veiculos` (`id`, `preco`, `nome`, `status`, `created_at`, `concessionaria_id`, `avatar`, `role`) VALUES
-(1, 10000, 'Carro novo', 0, '2021-03-20 18:49:09', 3, '', 2);
+(29, 1212, 'None', 0, '2021-03-23 03:04:10', 9, 0x312e6a7067, 2),
+(30, 1221212, 'NnNN', 0, '2021-03-23 03:04:24', 2, 0x342e6a7067, 2),
+(32, 121212, 'PAA', 0, '2021-03-23 03:05:07', 2, 0x332e6a7067, 2),
+(33, 123, 'GSS', 0, '2021-03-23 03:06:07', 2, 0x342e6a7067, 2),
+(34, 121212, 'LKJJS', 0, '2021-03-23 03:06:33', 9, 0x352e6a7067, 2);
 
 --
 -- Índices para tabelas despejadas
@@ -118,19 +117,19 @@ ALTER TABLE `veiculos`
 -- AUTO_INCREMENT de tabela `concessionaria`
 --
 ALTER TABLE `concessionaria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `veiculos`
 --
 ALTER TABLE `veiculos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
