@@ -31,7 +31,7 @@
 
 ## 💻 Sobre o projeto
 
-:tada: Simples sistema de gerenciamento de uma concessionária em PHP
+:tada: Sistema simples de gerenciamento para uma concessionária em PHP
 
 <br>
 
