@@ -72,6 +72,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Bootstrap](https://getbootstrap.com/)
 - [PHP](https://www.php.net/)
+- [MySQL](https://www.mysql.com/)
 
 <br>
 
