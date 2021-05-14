@@ -1,13 +1,11 @@
 <?php
-require('db.php');
+require('config.php');
 $msg = "";
-
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email      = mysqli_real_escape_string($con, $_POST['email']);
     $password   = mysqli_real_escape_string($con, $_POST['password']);
     $res        = mysqli_query($con, "SELECT * FROM usuarios WHERE email='$email' AND password='$password'");
     $count      = mysqli_num_rows($res);
-
     if ($count > 0) {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['ROLE'] = $row['role'];

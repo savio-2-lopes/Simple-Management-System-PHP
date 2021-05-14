@@ -12,28 +12,23 @@ if (isset($_GET['id'])) {
     if ($_SESSION['ROLE'] == 2 && $_SESSION['USER_ID'] != $id) {
         die('Acesso Negado');
     }
-
     $res->mysqli::query($con, "SELECT * FROM usuarios WHERE id='$id'");
     $row->mysqli_fetch_assoc($res);
-
     $email = $row['email'];
     $password = $row['password'];
     $name = $row['name'];
     $concessionaria_id = $row['concessionaria_id'];
 }
-
 if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $concessionaria_id = mysqli_real_escape_string($con, $_POST['concessionaria_id']);
-
     if ($id > 0) {
         $sql = "UPDATE usuarios SET name='$name',password='$password',email='$email',concessionaria_id='$concessionaria_id' WHERE id='$id'";
     } else {
         $sql = "INSERT INTO usuarios(name,password,email,concessionaria_id,role) values('$name','$password','$email','$concessionaria_id','2')";
     }
-
     mysqli_query($con, $sql);
     header('location:user.php');
     die();
@@ -47,7 +42,7 @@ if (isset($_POST['submit'])) {
                 <div class="card">
 
                     <section class="card-header">
-                        <strong>Formulário</strong> <small>Usuário</small>
+                        <strong>Formulário</strong> <small>usuário</small>
                     </section>
 
                     <article class="card-body card-block">
@@ -79,15 +74,15 @@ if (isset($_POST['submit'])) {
                                     <label class="input-group-text" for="inputGroupSelect01">Concessionária</label>
                                 </div>
                                 <select class="custom-select" name="concessionaria_id" id="inputGroupSelect01" required>
-                                    <option selected>Selecione a concessionária...</option>
+                                    <option selected>Selecione o carro...</option>
 
                                     <?php
-                                    $res = mysqli_query($con, "SELECT * FROM concessionaria ORDER BY concessionaria desc");
+                                    $res = mysqli_query($con, "SELECT * FROM veiculos ORDER BY veiculos desc");
                                     while ($row = mysqli_fetch_assoc($res)) {
                                         if ($concessionaria_id == $row['id']) {
-                                            echo "<option selected='selected' value=" . $row['id'] . ">" . $row['concessionaria'] . "</option>";
+                                            echo "<option selected='selected' value=" . $row['id'] . ">" . $row['veiculos'] . "</option>";
                                         } else {
-                                            echo "<option value=" . $row['id'] . ">" . $row['concessionaria'] . "</option>";
+                                            echo "<option value=" . $row['id'] . ">" . $row['veiculos'] . "</option>";
                                         }
                                     }
                                     ?>

@@ -1,6 +1,5 @@
 <?php
 require('top.php');
-
 if ($_SESSION['ROLE'] != 1) {
     header('location:add_user.php?id=' . $_SESSION['USER_ID']);
     die();
@@ -9,7 +8,6 @@ if (isset($_GET['type']) && $_GET['type'] == 'delete' && isset($_GET['id'])) {
     $id = mysqli_real_escape_string($con, $_GET['id']);
     mysqli_query($con, "DELETE FROM concessionaria WHERE id='$id'");
 }
-
 $res = mysqli_query($con, "SELECT * FROM concessionaria order by id desc");
 ?>
 
